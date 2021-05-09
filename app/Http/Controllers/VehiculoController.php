@@ -36,10 +36,8 @@ class VehiculoController extends Controller
     public function store(Request $request)
     {
         Vehiculo::create([
-            'propietario'=> $request->propietario,
-            'tipo'=> $request->tipo,
-            'numDocumento'=> $request->numDocumento,//Relacion con tabla propietario
             'placa'=> $request->placa,
+            'numDocumento'=> $request->numDocumento,//Relacion con tabla propietario
             'marca'=> $request->marca,
             'linea'=> $request->linea,
             'modelo'=> $request->modelo,
@@ -74,7 +72,7 @@ class VehiculoController extends Controller
      */
     public function edit(Vehiculo $vehiculo)
     {
-        //
+        return view('vehiculos.edit',['vehiculo'=>$vehiculo]);
     }
 
     /**
@@ -86,7 +84,8 @@ class VehiculoController extends Controller
      */
     public function update(Request $request, Vehiculo $vehiculo)
     {
-        //
+        $vehiculo->update($request->all());
+        return view('vehiculos.show',['vehiculo'=>$vehiculo]);
     }
 
     /**

@@ -1,0 +1,6 @@
+.capital{
+    text-transform: capitalize;
+}
+.mayus{
+    text-transform: uppercase;
+}
