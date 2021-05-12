@@ -21,10 +21,6 @@
             <p>{{$vehiculo->color}}</p>
         </div>
         <div class="col-md-4">
-            <h3 for="capacidad">Capacidad</h3>
-            <p>{{$vehiculo->capacidad}}</p>
-        </div>
-        <div class="col-md-4">
             <h3 for="color">Categoria</h3>
             <p>{{$vehiculo->idCategoria}}</p>
         </div>

@@ -22,7 +22,11 @@ class CitaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'modalidad' => $this->faker->word(),
+            'fecha' => $this->faker->date(),
+            'hora' => $this->faker->time(10),
+            'idVendedor' => $this->faker->numberBetween(1,15),
+            'idCliente' => $this->faker->numberBetween(1,25)
         ];
     }
 }

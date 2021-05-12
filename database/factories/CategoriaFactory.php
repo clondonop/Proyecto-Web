@@ -21,8 +21,11 @@ class CategoriaFactory extends Factory
      */
     public function definition()
     {
+        $this->faker->addProvider(new \Faker\Provider\Fakecar($this->faker));
         return [
-            //
+            'clase'=> $this->faker->vehicleGearBoxType(),
+            'carroceria'=> $this->faker->vehicleType(),
+            'combustible'=> $this->faker->vehicleFuelType()
         ];
     }
 }

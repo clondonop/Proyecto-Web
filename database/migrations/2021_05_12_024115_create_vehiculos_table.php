@@ -19,10 +19,9 @@ class CreateVehiculosTable extends Migration
             $table->string('marca');
             $table->string('modelo');
             $table->string('color');
-            $table->string('capacidad');
-            $table->foreignId('categoria_id');
+            $table->foreignId('idCategoria');
             $table->timestamps();
-            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
+            $table->foreign('idCategoria')->references('id')->on('categorias')->onDelete('cascade');
           
         });
     }

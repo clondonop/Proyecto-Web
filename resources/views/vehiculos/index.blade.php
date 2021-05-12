@@ -7,7 +7,8 @@
     @foreach ($vehiculos as $vehiculo)
 
             <h1>Placa <a class="mayus" href="{{route('vehiculos.show',$vehiculo->id)}}"> {{$vehiculo->placa}}</a></h1>
-
+            <h2 class="capital">Marca  {{$vehiculo->marca}}</h2>
+            <h2 class="capital">Modelo  {{$vehiculo->modelo}}</h2>
 
         @endforeach
 @endsection

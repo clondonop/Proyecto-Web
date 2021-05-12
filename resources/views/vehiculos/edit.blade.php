@@ -29,11 +29,6 @@
                     value="{{$vehiculo->color}}">
             </div>
             <div class="form-group col-md-4">
-                <label for="capacidad">Capacidad</label>
-                <input required type="text" class="form-control capital" id="capacidad" name="capacidad"
-                    value="{{$vehiculo->capacidad}}">
-            </div>
-            <div class="form-group col-md-4">
                 <label for="idCategoria">Categoria</label>
                 <select id="idCategoria" class="form-control" name="idCategoria">
                     <option selected>Seleccione</option>

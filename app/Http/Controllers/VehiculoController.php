@@ -37,17 +37,11 @@ class VehiculoController extends Controller
     {
         Vehiculo::create([
             'placa'=> $request->placa,
-            'numDocumento'=> $request->numDocumento,//Relacion con tabla propietario
             'marca'=> $request->marca,
-            'linea'=> $request->linea,
             'modelo'=> $request->modelo,
-            'cc'=> $request->cc,
             'color'=> $request->color,
-            'servicio'=> $request->servicio,
-            'clase'=> $request->clase,
-            'carroceria'=> $request->carroceria,
-            'combustible'=> $request->combustible,
-            'capacidad'=> $request->capacidad
+            'idCategoria'=> $request->idCategoria,
+            
         ]);
         
         return redirect()->route('vehiculos.index');

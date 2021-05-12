@@ -20,9 +20,14 @@ class VehiculoFactory extends Factory
      * @return array
      */
     public function definition()
-    {
+    {  
         return [
-            //
+            'placa'=> $this->faker->vehicleRegistration(),
+            'marca'=> $this->faker->vehicleBrand(),
+            'modelo'=> $this->faker->biasedNumberBetween(2010,2022, 'sqrt'),
+            'color'=> $this->faker->colorName(),
+            'idCategoria'=> $this->faker->numberBetween(1,3)
+            
         ];
     }
 }

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Vehiculo extends Model
 {
     use HasFactory;
-    public function categoria(){
+    protected $guarded=[];
+    public function vehiculo(){
         return $this->hasOne(Categoria::class);
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
+    protected $guarded=[];
     public function cita(){
         return $this->belongsTo(Cita::class);
     }

@@ -17,7 +17,7 @@ class CreateCitasTable extends Migration
             $table->id();
             $table->string('modalidad');
             $table->date('fecha');
-            $table->date('hora');
+            $table->time('hora');
             $table->foreignId('idVendedor');
             $table->foreignId('idCliente');
             $table->timestamps();
