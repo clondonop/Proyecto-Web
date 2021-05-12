@@ -61,7 +61,8 @@ class VehiculoController extends Controller
      */
     public function show(Vehiculo $vehiculo)
     {
-        return view('vehiculos.show',['vehiculo'=>$vehiculo]);
+        $categoria = $vehiculo->categoria;
+        return view('vehiculos.show',['vehiculo'=>$vehiculo,'categoria'=>$categoria]);
     }
 
     /**
@@ -96,6 +97,8 @@ class VehiculoController extends Controller
      */
     public function destroy(Vehiculo $vehiculo)
     {
-        //
+        $vehiculo->delete(); 
+
+        return redirect()->route('vehiculos.index');
     }
 }

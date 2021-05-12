@@ -5,25 +5,15 @@
         @csrf
         @method('PATCH')
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label for="placa">Placa</label>
-                <input required type="text" class="form-control mayus" id="placa" name="placa" value="{{$vehiculo->placa}}">
+                <input required type="text" class="form-control mayus" id="placa" name="placa"
+                    value="{{$vehiculo->placa}}">
             </div>
-            <div class="form-group col-md-6">
-                <label for="numDocumento">Número de documento del propietario</label>
-                <input required type="text" class="form-control capital" id="numDocumento" name="numDocumento"
-                    value="{{$vehiculo->numDocumento}}">
-
-            </div>
-        </div>
-        <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="marca">Marca</label>
-                <input required type="text" class="form-control capital" id="marca" name="marca" value="{{$vehiculo->marca}}">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="linea">Linea</label>
-                <input required type="text" class="form-control capital" id="linea" name="linea" value="{{$vehiculo->linea}}">
+                <input required type="text" class="form-control capital" id="marca" name="marca"
+                    value="{{$vehiculo->marca}}">
             </div>
             <div class="form-group col-md-4">
                 <label for="modelo">Modelo</label>
@@ -34,40 +24,26 @@
 
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="c">Cilindraje</label>
-                <input required type="text" class="form-control capital " id="cc" name="cc" value="{{$vehiculo->cc}}">
-            </div>
-            <div class="form-group col-md-4">
                 <label for="color">Color</label>
-                <input required type="text" class="form-control capital" id="color" name="color" value="{{$vehiculo->color}}">
+                <input required type="text" class="form-control capital" id="color" name="color"
+                    value="{{$vehiculo->color}}">
             </div>
             <div class="form-group col-md-4">
-                <label for="servicio">Servicio</label>
-                <input required type="text" class="form-control capital" id="servicio" name="servicio"
-                    value="{{$vehiculo->servicio}}">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <label for="clase">Clase de vehículo</label>
-                <input required type="text" class="form-control capital" id="clase" name="clase" value="{{$vehiculo->clase}}">
-            </div>
-            <div class="form-group col-md-3">
-                <label for="carroceria">Tipo Carrocería</label>
-                <input required type="text" class="form-control capital" id="carroceria" name="carroceria"
-                    value="{{$vehiculo->carroceria}}">
-            </div>
-            <div class="form-group col-md-3">
-                <label for="combustible">Combustible</label>
-                <input required type="text" class="form-control capital" id="combustible" name="combustible"
-                    value="{{$vehiculo->combustible}}">
-            </div>
-            <div class="form-group col-md-3">
                 <label for="capacidad">Capacidad</label>
-                <input required type="text" class="form-control capital"  id="capacidad" name="capacidad"
+                <input required type="text" class="form-control capital" id="capacidad" name="capacidad"
                     value="{{$vehiculo->capacidad}}">
             </div>
+            <div class="form-group col-md-4">
+                <label for="idCategoria">Categoria</label>
+                <select id="idCategoria" class="form-control" name="idCategoria">
+                    <option selected>Seleccione</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
         </div>
+        
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
 </div>

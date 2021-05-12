@@ -16,18 +16,14 @@ class CreateVehiculosTable extends Migration
         Schema::create('vehiculos', function (Blueprint $table) {
             $table->id();
             $table->string('placa');
-            $table->string('numDocumento');
             $table->string('marca');
-            $table->string('linea');
             $table->string('modelo');
-            $table->string('cc');
             $table->string('color');
-            $table->string('servicio');
-            $table->string('clase');
-            $table->string('carroceria');
-            $table->string('combustible');
             $table->string('capacidad');
+            $table->foreignId('categoria_id');
             $table->timestamps();
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
+          
         });
     }
 
