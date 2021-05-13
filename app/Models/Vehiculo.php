@@ -9,7 +9,7 @@ class Vehiculo extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    public function vehiculo(){
-        return $this->hasOne(Categoria::class);
+    public function categoria(){
+        return $this->belongsTo(Categoria::class,'idCategoria');
     }
 }

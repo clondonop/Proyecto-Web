@@ -13,7 +13,7 @@ class CategoriaFactory extends Factory
      * @var string
      */
     protected $model = Categoria::class;
-
+    
     /**
      * Define the model's default state.
      *
@@ -22,10 +22,12 @@ class CategoriaFactory extends Factory
     public function definition()
     {
         $this->faker->addProvider(new \Faker\Provider\Fakecar($this->faker));
+        $acabados = [1 => "De Lujo", 2 => "Básico"];
         return [
-            'clase'=> $this->faker->vehicleGearBoxType(),
+            'transmision'=> $this->faker->vehicleGearBoxType(),
             'carroceria'=> $this->faker->vehicleType(),
-            'combustible'=> $this->faker->vehicleFuelType()
+            'combustible'=> $this->faker->vehicleFuelType(),
+            'acabados'=> $acabados[$this->faker->numberBetween(1,2)]
         ];
     }
 }

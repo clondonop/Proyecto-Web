@@ -20,11 +20,11 @@ class CitaFactory extends Factory
      * @return array
      */
     public function definition()
-    {
+    { $modalidad = [1 => "Presencial", 2 => "Virtual"];
         return [
-            'modalidad' => $this->faker->word(),
-            'fecha' => $this->faker->date(),
-            'hora' => $this->faker->time(10),
+            'modalidad' => $modalidad[$this->faker->numberBetween(1,2)],
+            'fecha' => $this->faker->dateTimeBetween('-6 months', 'now')->format('Y-m-d'),
+            'hora' => $this->faker-> time('H:i', rand(28800,57400)),
             'idVendedor' => $this->faker->numberBetween(1,15),
             'idCliente' => $this->faker->numberBetween(1,25)
         ];

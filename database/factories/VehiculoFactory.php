@@ -13,7 +13,7 @@ class VehiculoFactory extends Factory
      * @var string
      */
     protected $model = Vehiculo::class;
-
+    
     /**
      * Define the model's default state.
      *
@@ -21,11 +21,13 @@ class VehiculoFactory extends Factory
      */
     public function definition()
     {  
+        $marca = [1 => "Kia", 2 => "Toyota", 3 => "Chevrolet", 4 => "Nissan", 5 => "Honda", 6 => "Jeep", 7 => "Audi"];
+        $color = [1 => "Blanco", 2 => "Negro", 3 => "Gris", 4 => "Rojo", 5 => "Azul", 6 => "Plata", 7 => "Café"];
         return [
             'placa'=> $this->faker->vehicleRegistration(),
-            'marca'=> $this->faker->vehicleBrand(),
+            'marca'=> $marca[$this->faker->numberBetween(1,7)],
             'modelo'=> $this->faker->biasedNumberBetween(2010,2022, 'sqrt'),
-            'color'=> $this->faker->colorName(),
+            'color'=> $color[$this->faker->numberBetween(1,7)],
             'idCategoria'=> $this->faker->numberBetween(1,3)
             
         ];

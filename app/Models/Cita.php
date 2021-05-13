@@ -10,9 +10,9 @@ class Cita extends Model
     use HasFactory;
     protected $guarded=[];
     public function cliente(){
-        return $this->hasOne(Cliente::class);
+        return $this->belongsTo(Cliente::class,'idCliente');
     }
     public function vendedor(){
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class,'idVendedor');
     }
 }

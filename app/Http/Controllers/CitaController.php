@@ -14,7 +14,7 @@ class CitaController extends Controller
      */
     public function index()
     {
-        //
+        return view('citas.index',['citas'=>Cita::latest()->get()]);
     }
 
     /**
@@ -24,7 +24,7 @@ class CitaController extends Controller
      */
     public function create()
     {
-        //
+        return view('citas.create');
     }
 
     /**
@@ -35,7 +35,16 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Cita::create([
+            'modalidad'=> $request->modalidad,
+            'fecha'=> $request->fecha,
+            'hora'=> $request->hora,
+            'idVendedor'=> $request->idVendedor,
+            'idCliente'=> $request->idCliente,
+            
+        ]);
+        
+        return redirect()->route('citas.index');
     }
 
     /**
@@ -46,7 +55,9 @@ class CitaController extends Controller
      */
     public function show(Cita $cita)
     {
-        //
+        $user = $cita->user;
+        $cliente = $cita->cliente;
+        return view('citas.show',['cita'=>$cita,'user'=>$user,'cliente'=>$cliente]);
     }
 
     /**
@@ -57,7 +68,9 @@ class CitaController extends Controller
      */
     public function edit(Cita $cita)
     {
-        //
+        $user = $cita->user;
+        $cliente = $cita->cliente;
+        return view('citas.edit',['cita'=>$cita,'user'=>$user,'cliente'=>$cliente]);
     }
 
     /**

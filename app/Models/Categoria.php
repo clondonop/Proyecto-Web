@@ -9,7 +9,8 @@ class Categoria extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
     public function vehiculo(){
-        return $this->belongsTo(Vehiculo::class);
+        return $this->hasMany(Vehiculo::class);
     }
 }

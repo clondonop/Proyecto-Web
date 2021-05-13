@@ -67,7 +67,8 @@ class VehiculoController extends Controller
      */
     public function edit(Vehiculo $vehiculo)
     {
-        return view('vehiculos.edit',['vehiculo'=>$vehiculo]);
+        $categoria = $vehiculo->categoria;
+        return view('vehiculos.edit',['vehiculo'=>$vehiculo,'categoria'=>$categoria]);
     }
 
     /**
@@ -79,8 +80,9 @@ class VehiculoController extends Controller
      */
     public function update(Request $request, Vehiculo $vehiculo)
     {
+        $categoria = $vehiculo->categoria;
         $vehiculo->update($request->all());
-        return view('vehiculos.show',['vehiculo'=>$vehiculo]);
+        return view('vehiculos.show',['vehiculo'=>$vehiculo,'categoria'=>$categoria]);
     }
 
     /**
