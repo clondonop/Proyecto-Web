@@ -17,6 +17,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <link href={{asset('css/style.css')}} rel="stylesheet">
 </head>
 
@@ -87,6 +88,21 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script>
+    $('#timepicker').timepicker();
+    </script>
+    <script>
+    $('#datepicker').datepicker({
+        disableDates: function(date) {
+            const currentDate = new Date();
+            return date > currentDate ? true : false;
+        },
+        format: 'dd-mm-yyyy'
+
+
+    });
     </script>
 </body>
 

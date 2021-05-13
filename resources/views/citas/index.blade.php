@@ -3,8 +3,7 @@
 
     @foreach ($citas as $cita)
     
-            <h2 class="capital">Marca  {{$vehiculo->marca}}</h2>
-            <h2 class="capital">Modelo  {{$vehiculo->modelo}}</h2>
+            <h2 class="capital" >Fecha:<a class="mayus" href="{{route('citas.show',$cita->id)}}"> {{$cita->fecha}}</a></h2>
 
         @endforeach
 @endsection

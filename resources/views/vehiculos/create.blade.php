@@ -11,7 +11,7 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="marca">Marca</label>
-                <input required type="datepicker" class="form-control capital" id="marca" name="marca">
+                <input required type="text" class="form-control capital" id="marca" name="marca" >
             </div>
             <div class="form-group col-md-4">
                 <label for="modelo">Modelo</label>
