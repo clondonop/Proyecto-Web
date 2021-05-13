@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 @section('content')
 <a href="{{ route('vehiculos.create')}}" class="btn btn-primary">Registrar vehiculo</a>  
 

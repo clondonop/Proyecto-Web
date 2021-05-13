@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 @section('content')
 <div class="container py-3">
     <form action="{{route('vehiculos.update',$vehiculo->id)}}" method='post'>

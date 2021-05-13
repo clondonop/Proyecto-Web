@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 @section('content')
 <div class="container py-3">
     <form action="{{route('vehiculos.store')}}" method='post'>
@@ -11,7 +11,7 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="marca">Marca</label>
-                <input required type="text" class="form-control capital" id="marca" name="marca">
+                <input required type="datepicker" class="form-control capital" id="marca" name="marca">
             </div>
             <div class="form-group col-md-4">
                 <label for="modelo">Modelo</label>
@@ -38,6 +38,7 @@
 </div>
 <button type="submit" class="btn btn-primary">Registrar</button>
 </form>
+
 </div>
 <a href="{{ route('vehiculos.index')}}" class="btn btn-primary">Regresar</a>
 @endsection

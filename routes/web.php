@@ -29,3 +29,6 @@ Route::resource('vehiculos',VehiculoController::class);
 Route::resource('clientes',ClienteController::class);
 Route::resource('categorias',CategoriaController::class);
 Route::resource('citas',CitaController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
