@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cita;
 use Illuminate\Http\Request;
+use DB;
 
 class CitaController extends Controller
 {
@@ -24,7 +25,9 @@ class CitaController extends Controller
      */
     public function create()
     {
-        return view('citas.create');
+        $users = DB::select('select id,name,lastName from users');
+        $clientes = DB::select('select id,nombre,apellido from clientes');
+        return view('citas.create',['users'=>$users,'clientes'=>$clientes]);
     }
 
     /**
@@ -35,10 +38,12 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
+       
         Cita::create([
             'modalidad'=> $request->modalidad,
             'fecha'=> $request->fecha,
             'hora'=> $request->hora,
+            'interes'=> $request->interes,
             'idVendedor'=> $request->idVendedor,
             'idCliente'=> $request->idCliente,
             
@@ -57,7 +62,7 @@ class CitaController extends Controller
     {
         $user = $cita->user;
         $cliente = $cita->cliente;
-        return view('citas.show',['cita'=>$cita,'user'=>$user,'cliente'=>$cliente]);
+        return view('citas.show',['cita'=>$cita,'cliente'=>$cliente,'user'=>$user]);
     }
 
     /**
@@ -68,9 +73,10 @@ class CitaController extends Controller
      */
     public function edit(Cita $cita)
     {
+        $users = DB::select('select id,name,lastName from users');
         $user = $cita->user;
         $cliente = $cita->cliente;
-        return view('citas.edit',['cita'=>$cita,'user'=>$user,'cliente'=>$cliente]);
+        return view('citas.edit',['cita'=>$cita,'cliente'=>$cliente,'user'=>$user,'users'=>$users]);
     }
 
     /**
@@ -82,7 +88,10 @@ class CitaController extends Controller
      */
     public function update(Request $request, Cita $cita)
     {
-        //
+        $user = $cita->user;
+        $cliente = $cita->cliente;
+        $cita->update($request->all());
+        return view('citas.show',['cita'=>$cita,'cliente'=>$cliente,'user'=>$user]);
     }
 
     /**
@@ -93,6 +102,8 @@ class CitaController extends Controller
      */
     public function destroy(Cita $cita)
     {
-        //
+        $cita->delete(); 
+
+        return redirect()->route('citas.index');
     }
 }

@@ -21,7 +21,6 @@
                     value="{{$vehiculo->modelo}}">
             </div>
         </div>
-
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="color">Color</label>
@@ -40,7 +39,6 @@
                 </select>
             </div>
         </div>
-        
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
 </div>

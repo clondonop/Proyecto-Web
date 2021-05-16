@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-4">
             <h3 for="idVendedor">Vendedor</h3>
-
+            <p class="capital">{{$user->name}} {{$user->lastName}}</p>
         </div>
         <div class="col-md-4">
             <h3 for="idCliente">Cliente</h3>

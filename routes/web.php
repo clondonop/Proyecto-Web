@@ -25,6 +25,9 @@ Route::get('/registrar', function () {
 Route::get('/index', function () {
     return view('vehiculos.index');
 });
+Route::get('/registrarcita', function () {
+    return view('citas.create');
+});
 Route::resource('vehiculos',VehiculoController::class);
 Route::resource('clientes',ClienteController::class);
 Route::resource('categorias',CategoriaController::class);
