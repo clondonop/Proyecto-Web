@@ -28,10 +28,10 @@ Route::get('/index', function () {
 Route::get('/registrarcita', function () {
     return view('citas.create');
 });
-Route::resource('vehiculos',VehiculoController::class);
-Route::resource('clientes',ClienteController::class);
+Route::resource('vehiculos',VehiculoController::class)->middleware('auth');
+Route::resource('clientes',ClienteController::class)->middleware('auth');
 Route::resource('categorias',CategoriaController::class);
-Route::resource('citas',CitaController::class);
+Route::resource('citas',CitaController::class)->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -40,6 +40,7 @@ class VehiculoController extends Controller
             'marca'=> $request->marca,
             'modelo'=> $request->modelo,
             'color'=> $request->color,
+            'disponibilidad'=> $request->disponibilidad,
             'idCategoria'=> $request->idCategoria,
             
         ]);
