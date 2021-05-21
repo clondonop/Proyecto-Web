@@ -28,8 +28,9 @@
             <div class="form-group col-md-4">
                 <label for="idVendedor">Vendedor</label>
                 <select id="idVendedor" class="form-control" name="idVendedor">
+                <option value="">Seleccione</option>
                     @foreach ($users as $user)
-                    <option value='{{$user->id}}'> {{$user->name}} {{$user->lastName}}</option>
+                    <option value={{$user->id}}> {{$user->name}} {{$user->lastName}}</option>
                     @endforeach
                 </select>
             </div>

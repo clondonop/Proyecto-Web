@@ -13,6 +13,9 @@ class User extends Authenticatable
     public function cita(){
         return $this->hasMany(Cita::class);
     }
+    public function empleado(){
+        return $this->hasOne(Empleado::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -23,6 +26,7 @@ class User extends Authenticatable
         'lastName',
         'email',
         'password',
+        'avatar'
     ];
 
     /**

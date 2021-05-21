@@ -37,7 +37,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('vehiculos.index') }}">Vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('citas.index') }}">Citas</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('empleados.index') }}">Usuarios</a>
+                    </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

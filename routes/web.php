@@ -5,6 +5,8 @@ use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CitaController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\EmpleadoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,10 +30,12 @@ Route::get('/index', function () {
 Route::get('/registrarcita', function () {
     return view('citas.create');
 });
+
 Route::resource('vehiculos',VehiculoController::class)->middleware('auth');
 Route::resource('clientes',ClienteController::class)->middleware('auth');
 Route::resource('categorias',CategoriaController::class);
 Route::resource('citas',CitaController::class)->middleware('auth');
+Route::resource('empleados',EmpleadoController::class)->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
