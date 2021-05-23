@@ -28,6 +28,7 @@ class VehiculoFactory extends Factory
             'marca'=> $marca[$this->faker->numberBetween(1,7)],
             'modelo'=> $this->faker->biasedNumberBetween(2010,2022, 'sqrt'),
             'color'=> $color[$this->faker->numberBetween(1,7)],
+            'precio'=>$this->faker->numberBetween(35000000,70000000),
             'disponible'=> $this->faker->boolean($chanceOfGettingTrue = 95) ,
             'idCategoria'=> $this->faker->numberBetween(1,3)
             

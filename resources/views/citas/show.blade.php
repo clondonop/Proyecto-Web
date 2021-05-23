@@ -26,8 +26,8 @@
 
         </div>
     </div>
-    <a href="{{ route('citas.index')}}" class="btn btn-primary">Regresar</a>
-    <a href="{{ route('citas.edit',$cita->id)}}" class="btn btn-primary">Editar</a>
+    <a href="{{ route('citas.index')}}" class="btn btn-danger boton">Regresar</a>
+    <a href="{{ route('citas.edit',$cita->id)}}" class="btn btn-danger boton">Editar</a>
     <form action="{{route('citas.destroy',$cita->id)}}" method='POST'>
 
         @csrf
@@ -36,7 +36,7 @@
 
 
 
-        <button type="submit" class="btn btn-primary">Eliminar </button>
+        <button type="submit" class="btn btn-danger boton">Eliminar </button>
 
     </form>
     @endsection

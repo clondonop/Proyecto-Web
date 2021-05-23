@@ -6,15 +6,23 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="cargo">Cargo</label>
-                <input required type="text" class="form-control mayus" id="cargo" name="cargo">
+                <select id="cargo" class="form-control" name="cargo">
+                    <option selected>Seleccione</option>
+                    <option>Asesor</option>
+                    <option>Gerente</option>
+                </select>
             </div>
             <div class="form-group col-md-4">
                 <label for="area">Area</label>
-                <input required type="text" class="form-control capital" id="area" name="area">
+                <select id="area" class="form-control" name="are">
+                    <option selected>Seleccione</option>
+                    <option>Ventas</option>
+                    <option>Administración</option>
+                </select>
             </div>
             <div class="form-group col-md-4">
                 <label for="residencia">Residencia</label>
-                <input required type="text" class="form-control capital" id="residencia" name="residencia">
+                <input required type="text" class="form-control capital" id="residencia" name="residencia" placeholder="Dirección completa">
             </div>
         </div>
 
@@ -23,7 +31,7 @@
                 <label for="">Fotografía personal (Retrato)</label>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" name="avatar" id="avatar" lang="es">
-                    <label class="custom-file-label" for="fto">Seleccionar Archivo</label>
+                    <label class="custom-file-label" for="fto"></label>
                 </div>
             </div>
             <div class="form-group col-md-4">
@@ -37,9 +45,9 @@
             </div>
         </div>
 </div>
-<button type="submit" class="btn btn-primary">Registrar</button>
+<button type="submit" class="btn btn-danger boton">Registrar</button>
 </form>
 
 </div>
-<a href="{{ route('empleados.index')}}" class="btn btn-primary">Regresar</a>
+<a href="{{ route('empleados.index')}}" class="btn btn-danger boton">Regresar</a>
 @endsection

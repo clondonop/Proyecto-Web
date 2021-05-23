@@ -41,9 +41,9 @@
                 </select>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Registrar</button>
+        <button type="submit" class="btn btn-danger boton">Registrar</button>
     </form>
 </div>
-<a href="{{ route('citas.create')}}" class="btn btn-primary">Registrar cita</a>
-<a href="{{ route('citas.index')}}" class="btn btn-primary">Regresar</a>
+<a href="{{ route('citas.create')}}" class="btn btn-danger boton">Registrar cita</a>
+<a href="{{ route('citas.index')}}" class="btn btn-danger boton">Regresar</a>
 @endsection

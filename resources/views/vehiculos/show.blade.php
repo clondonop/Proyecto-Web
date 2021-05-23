@@ -44,8 +44,8 @@
         </div>
     </div>
 </div>
-<a href="{{ route('vehiculos.index')}}" class="btn btn-primary">Regresar</a>
-<a href="{{ route('vehiculos.edit',$vehiculo->id)}}" class="btn btn-primary">Editar</a>
+<a href="{{ route('vehiculos.index')}}" class="btn btn-danger boton">Regresar</a>
+<a href="{{ route('vehiculos.edit',$vehiculo->id)}}" class="btn btn-danger boton">Editar</a>
 <form action="{{route('vehiculos.destroy',$vehiculo->id)}}" method='POST'>
 
     @csrf
@@ -54,7 +54,7 @@
 
 
 
-    <button type="submit" class="btn btn-primary">Eliminar </button>
+    <button type="submit" class="btn btn-danger boton">Eliminar </button>
 
 </form>
 @endsection

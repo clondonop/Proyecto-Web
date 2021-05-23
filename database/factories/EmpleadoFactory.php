@@ -21,13 +21,14 @@ class EmpleadoFactory extends Factory
      */
     public function definition()
     {
-        $marca = [1 => "Kia", 2 => "Toyota", 3 => "Chevrolet", 4 => "Nissan", 5 => "Honda", 6 => "Jeep", 7 => "Audi"];
+        $cargo = [1 => "Gerente", 2 => "Asesor"];
+        $area = [1 => "Administracion", 2 => "Ventas"];
         return [
-            'cargo'=> $this->faker->jobTitle(),
-            'avatar'=> $this->faker->word(),
-            'area'=> $this->faker->word(),
+            'cargo'=> $cargo[$this->faker->biasedNumberBetween(1,2, 'sqrt')],
+            'avatar'=> $this->faker->unique()->randomElement(['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png']),
+            'area'=> $area[$this->faker->biasedNumberBetween(1,2, 'sqrt')],
             'residencia'=> $this->faker->streetAddress(),
-            'idUsuario' => $this->faker->numberBetween(1,15)
+            'idUsuario' => $this->faker->unique()->numberBetween(1,15)
             
         ];
     }

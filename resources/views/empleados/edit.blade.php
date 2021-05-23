@@ -18,8 +18,8 @@
                 <input required type="text" class="form-control capital" id="residencia" name="residencia"  value="{{$empleado->residencia}}">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-danger boton">Actualizar</button>
     </form>
 </div>
-<a href="{{ route('empleados.index')}}" class="btn btn-primary">Regresar</a>
+<a href="{{ route('empleados.index')}}" class="btn btn-danger boton">Regresar</a>
 @endsection

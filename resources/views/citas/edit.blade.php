@@ -35,8 +35,8 @@
                 </select>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-danger boton">Actualizar</button>
     </form>
 </div>
-<a href="{{ route('citas.index')}}" class="btn btn-primary">Regresar</a>
+<a href="{{ route('citas.index')}}" class="btn btn-danger boton">Regresar</a>
 @endsection

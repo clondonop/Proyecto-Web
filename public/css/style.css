@@ -1,3 +1,13 @@
+.boton{
+  background-color: #ff5c5c;
+  
+}
+.rojo{
+  color: #ff5c5c;
+}
+.rojo:hover{
+  color: #7C1313;
+}
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */

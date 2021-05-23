@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<a href="{{ route('empleados.create')}}" class="btn btn-primary">Register</a>
+<a href="{{ route('empleados.create')}}" class="btn btn-danger boton">Register</a>
     @foreach ($empleados as $empleado)
 
             <h1>Cargo <a class="mayus" href="{{route('empleados.show',$empleado->id)}}"> {{$empleado->cargo}}</a></h1>

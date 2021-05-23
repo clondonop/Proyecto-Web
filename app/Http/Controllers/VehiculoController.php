@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehiculo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class VehiculoController extends Controller
 {
@@ -35,16 +36,16 @@ class VehiculoController extends Controller
      */
     public function store(Request $request)
     {
-        Vehiculo::create([
-            'placa'=> $request->placa,
-            'marca'=> $request->marca,
-            'modelo'=> $request->modelo,
-            'color'=> $request->color,
-            'disponible'=> $request->disponible,
-            'idCategoria'=> $request->idCategoria,
-            
+        $request->validate([
+            'placa' => 'required|unique:vehiculos',
+            'marca' => 'required',
+            'modelo' =>'required',
+            'color' => 'required',
+            'precio' =>'required',
+            'disponible' => 'required',
+            'idCategoria' => 'required',
         ]);
-        
+       
         return redirect()->route('vehiculos.index');
     }
 

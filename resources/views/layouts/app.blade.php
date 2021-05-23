@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="shortcut icon" href={{asset('images/Logo.png')}} type="image/x-icon">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Motores Bolombolo</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,14 +19,16 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <link href={{asset('css/style.css')}} rel="stylesheet">
+
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src={{asset('images/Logo.png')}} alt="" width="30" height="24">
+                    Motores Bolombolo
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -36,18 +38,35 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @if(Auth::check())
                     <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                    <a class="nav-link" href="{{ route('vehiculos.index') }}">Vehiculos</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="{{ route('citas.index') }}">Citas</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="{{ route('empleados.index') }}">Usuarios</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('vehiculos.index') }}">Vehiculos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('citas.index') }}">Citas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('empleados.index') }}">Empleados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('categorias.index') }}">Categorias</a>
+                        </li>
                     </ul>
-
+                    @endif
+                    @if(!Auth::check())
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('vehiculos.index') }}">Vehiculos Disponibles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('empleados.index') }}">Nuestros Empleados</a>
+                        </li>
+                    </ul>
+                    @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -75,10 +94,10 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
+
                             </div>
                         </li>
                         @endguest
