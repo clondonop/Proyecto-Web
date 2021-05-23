@@ -30,6 +30,7 @@ class VehiculoFactory extends Factory
             'color'=> $color[$this->faker->numberBetween(1,7)],
             'precio'=>$this->faker->numberBetween(35000000,70000000),
             'disponible'=> $this->faker->boolean($chanceOfGettingTrue = 95) ,
+            'foto'=> $this->faker->randomElement(['f1.png', 'f2.png', 'f3.png', 'f4.png']),
             'idCategoria'=> $this->faker->numberBetween(1,3)
             
         ];

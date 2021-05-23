@@ -27,7 +27,7 @@ class CitaFactory extends Factory
             'fecha' => $this->faker->dateTimeBetween('-6 months', 'now')->format('Y-m-d'),
             'hora' => $this->faker-> time('H:i', rand(28800,57400)),
             'interes'=> $marca[$this->faker->numberBetween(1,7)],
-            'idVendedor' => $this->faker->numberBetween(1,15),
+            'idVendedor' => $this->faker->numberBetween(1,8),
             'idCliente' => $this->faker->numberBetween(1,25)
         ];
     }

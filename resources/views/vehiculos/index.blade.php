@@ -2,11 +2,10 @@
 @section('content')
 <div class="container">
     <a href="{{ route('vehiculos.create')}}" class="btn btn-danger boton m-1">Registrar vehiculo</a>
-    <div class="row">
+    <div class="row m-1">
         @foreach ($vehiculos as $vehiculo)
-
         <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="card" style="width: 18rem;">
+            <div class="card m-1" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Placa: {{$vehiculo->placa}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Marca: {{$vehiculo->marca}}</h6>
@@ -18,6 +17,6 @@
         </div>
         @endforeach
     </div>
-    <a href="{{ route('home')}}" class="rojo d-flex justify-content-end m-1">Regresar</a>
+    <a href="{{ route('home')}}" class="rojo d-flex justify-content-end m-2">Regresar</a>
 </div>
 @endsection

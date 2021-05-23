@@ -44,8 +44,25 @@ class VehiculoController extends Controller
             'precio' =>'required',
             'disponible' => 'required',
             'idCategoria' => 'required',
+            'foto' => 'required|mimes:jpg,jped,png',
         ]);
-       
+        if($request->hasFile('foto')){
+            $file=$request->file('foto');
+            $name= time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/' ,$name);
+            }
+            // dd($request);
+            Vehiculo::create([
+                'placa' => $request->placa,
+                'marca' => $request->marca,
+                'modelo' =>$request->modelo,
+                'color' => $request->color,
+                'precio' =>$request->precio,
+                'disponible' => $request->disponible,
+                'idCategoria' =>$request->idCategoria,
+                'foto' => $name,
+                
+            ]);
         return redirect()->route('vehiculos.index');
     }
 

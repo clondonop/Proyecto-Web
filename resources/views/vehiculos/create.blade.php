@@ -2,13 +2,13 @@
 @section('content')
 <div class="container py-3 align-middle">
     <h1>Registrar Vehículo</h1>
-    <form action="{{route('vehiculos.store')}}" method='post' class="m-3 p-3">
+    <form action="{{route('vehiculos.store')}}" method='post' class="m-3 p-3" enctype="multipart/form-data">
         @csrf
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="placa">Placa</label>
-                <input required type="text" class="form-control @error('placa') is-invalid @enderror mayus" id="placa" name="placa"
-                    oninput="this.value = this.value.toUpperCase()">
+                <input required type="text" class="form-control @error('placa') is-invalid @enderror mayus" id="placa"
+                    name="placa" oninput="this.value = this.value.toUpperCase()">
                 @error("placa")
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -17,7 +17,8 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="marca">Marca</label>
-                <input required type="text" class="form-control @error('marca') is-invalid @enderror capital" id="marca" name="marca">
+                <input required type="text" class="form-control @error('marca') is-invalid @enderror capital" id="marca"
+                    name="marca">
                 @error('marca')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -28,7 +29,8 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="modelo">Modelo</label>
-                <input required type="number" class="form-control @error('modelo') is-invalid @enderror capital" id="modelo" name="modelo">
+                <input required type="number" class="form-control @error('modelo') is-invalid @enderror capital"
+                    id="modelo" name="modelo">
                 @error('modelo')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -37,7 +39,8 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="color">Color</label>
-                <input required type="text" class="form-control @error('color') is-invalid @enderror capital" id="color" name="color">
+                <input required type="text" class="form-control @error('color') is-invalid @enderror capital" id="color"
+                    name="color">
                 @error('color')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -47,11 +50,12 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-            <label for="disponible">Disponibilidad</label>
-                <select id="disponible" class="form-control @error('disponible') is-invalid @enderror" name="disponible">
+                <label for="disponible">Disponibilidad</label>
+                <select id="disponible" class="form-control @error('disponible') is-invalid @enderror"
+                    name="disponible">
                     <option selected value="">Seleccione</option>
-                    <option value="true">Disponible</option>
-                    <option value="false">Vendido</option>
+                    <option value='1'>Disponible</option>
+                    <option value='0'>Vendido</option>
                 </select>
                 @error('disponible')
                 <span class="invalid-feedback" role="alert">
@@ -60,8 +64,9 @@
                 @enderror
             </div>
             <div class="form-group col-md-6">
-                <label for="idCategoria">Categoria</label>
-                <select id="idCategoria" class="form-control @error('idCategoria') is-invalid @enderror" name="idCategoria">
+                <label for="idCategoria">Categoría</label>
+                <select id="idCategoria" class="form-control @error('idCategoria') is-invalid @enderror"
+                    name="idCategoria">
                     <option selected value="">Seleccione</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -77,15 +82,28 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-6">
                 <label for="precio">Precio</label>
-                <input type="number" class="form-control @error('idCategoria') is-invalid @enderror capital" id="precio" name="precio">
+                <input type="number" class="form-control @error('idCategoria') is-invalid @enderror capital" id="precio"
+                    name="precio">
                 @error('precio')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
             </div>
+            <div class="form-group col-md-6">
+                <label for="foto">Fotografía</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input @error('foto') is-invalid @enderror" name="foto"
+                        id="foto" lang="es">
+                    <label class="custom-file-label" for="foto"></label>
+                    @error('foto')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
             </div>
         </div>
         <div class="d-flex justify-content-center">

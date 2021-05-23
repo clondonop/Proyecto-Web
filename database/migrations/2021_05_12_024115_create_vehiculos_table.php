@@ -20,6 +20,7 @@ class CreateVehiculosTable extends Migration
             $table->string('modelo');
             $table->string('color');
             $table->string('precio');
+            $table->string('foto');
             $table->boolean('disponible');
             $table->foreignId('idCategoria');
             $table->timestamps();
