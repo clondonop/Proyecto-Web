@@ -13,8 +13,15 @@
             <div class="my-1 py-1">
                 <h2 class="display-5">Placa: {{$vehiculo->placa}}</h2>
                 <p class="capital">{{$vehiculo->marca}} {{$vehiculo->color}} {{$vehiculo->modelo}} </p>
-                <p class="capital"></p>
-                <p> Tipo de Categoría: {{$vehiculo->idCategoria}}</p>
+                <div class="row">
+                    @if($vehiculo->disponible)
+                    <div class="col-md-6">Estado:Disponible</div>
+                    @endif
+                    @if(!$vehiculo->disponible)
+                    <div class="col-md-6">Estado: Vendido</div>
+                    @endif
+                    <div class="col-md-6"> Tipo de Categoría: {{$vehiculo->idCategoria}}</div>
+                </div>
                 <div>
                     <div class="row">
                         <div class="col-md-6">Transmisión: {{$categoria->transmision}} </div>
@@ -25,13 +32,13 @@
                         <div class="col-md-6">Acabados: {{$categoria->acabados}}</div>
                     </div>
                 </div>
-
             </div>
+
             <div class="bg-light shadow-sm mx-auto p-1 caja-foto overflow-hidden">
                 <img src='../images/{{$vehiculo->foto}}' class="img-fluid foto">
             </div>
         </div>
-        
+
     </div>
     <a href="{{ route('vehiculos.index')}}" class="rojo d-flex justify-content-end">Regresar</a>
 </div>

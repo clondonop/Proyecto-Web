@@ -1,7 +1,14 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <a href="{{ route('vehiculos.create')}}" class="btn btn-danger boton m-1">Registrar vehiculo</a>
+<div class="row">
+        <div class="col-md-10">
+            <h1>Empleados</h1>
+        </div>
+        <div class="col-md-2">
+        <a href="{{ route('vehiculos.create')}}" class="btn btn-danger boton m-1">Registrar vehiculo</a>
+        </div>
+    </div>
     <div class="row m-1">
         @foreach ($vehiculos as $vehiculo)
         <div class="col-lg-4 col-md-6 col-sm-6">

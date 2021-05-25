@@ -25,10 +25,10 @@ class EmpleadoFactory extends Factory
         $area = [1 => "Administracion", 2 => "Ventas"];
         return [
             'cargo'=> $cargo[$this->faker->biasedNumberBetween(1,2, 'sqrt')],
-            'avatar'=> $this->faker->unique()->randomElement(['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png']),
+            'avatar'=> $this->faker->unique()->randomElement(['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png']),
             'area'=> $area[$this->faker->biasedNumberBetween(1,2, 'sqrt')],
             'residencia'=> $this->faker->streetAddress(),
-            'idUsuario' => $this->faker->unique()->numberBetween(1,8)
+            'idUsuario' => $this->faker->unique()->numberBetween(1,9)
             
         ];
     }

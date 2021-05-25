@@ -51,7 +51,6 @@ class VehiculoController extends Controller
             $name= time().$file->getClientOriginalName();
             $file->move(public_path().'/images/' ,$name);
             }
-            // dd($request);
             Vehiculo::create([
                 'placa' => $request->placa,
                 'marca' => $request->marca,
@@ -100,6 +99,15 @@ class VehiculoController extends Controller
     public function update(Request $request, Vehiculo $vehiculo)
     {
         $categoria = $vehiculo->categoria;
+        $request->validate([
+            'placa' => 'required|unique:vehiculos'.',id',
+            'marca' => 'required',
+            'modelo' =>'required',
+            'color' => 'required',
+            'precio' =>'required',
+            'disponible' => 'required',
+            'idCategoria' => 'required'
+        ]);
         $vehiculo->update($request->all());
         return view('vehiculos.show',['vehiculo'=>$vehiculo,'categoria'=>$categoria]);
     }

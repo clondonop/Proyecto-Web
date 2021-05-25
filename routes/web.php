@@ -21,6 +21,7 @@ use App\Http\Controllers\EmpleadoController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/registrar', function () {
     return view('vehiculos.create');
 });
@@ -33,9 +34,10 @@ Route::get('/registrarcita', function () {
 
 Route::resource('vehiculos',VehiculoController::class)->middleware('auth');
 Route::resource('clientes',ClienteController::class)->middleware('auth');
-Route::resource('categorias',CategoriaController::class);
+Route::resource('categorias',CategoriaController::class)->middleware('auth');
 Route::resource('citas',CitaController::class)->middleware('auth');
 Route::resource('empleados',EmpleadoController::class)->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');

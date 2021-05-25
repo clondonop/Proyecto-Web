@@ -14,8 +14,9 @@ class EmpleadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('empleados.index',['empleados'=>Empleado::latest()->get()]);
+    {  
+        $empleados = DB::select('select users.name,users.lastName,empleados.id,empleados.cargo,empleados.area,empleados.avatar from empleados inner join users on users.id=empleados.idUsuario'); 
+         return view('empleados.index',['empleados'=>$empleados]);
     }
 
     /**
@@ -37,12 +38,19 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'cargo' => 'required',
+            'area' => 'required',
+            'residencia' =>'required',
+            'avatar' => 'required',
+            'idUsuario' =>'required|unique:empleados',
+        ]);
+
         if($request->hasFile('avatar')){
         $file=$request->file('avatar');
         $name= time().$file->getClientOriginalName();
         $file->move(public_path().'/images/' ,$name);
         }
-    
         Empleado::create([
             'cargo'=> $request->cargo,
             'area'=> $request->area,
@@ -50,8 +58,7 @@ class EmpleadoController extends Controller
             'avatar'=> $name,
             'idUsuario'=>$request->idUsuario,
         ]);
-        
-        return redirect()->route('empleados.index');
+          return redirect()->route('empleados.index');
     }
 
     /**
@@ -88,8 +95,14 @@ class EmpleadoController extends Controller
     public function update(Request $request, Empleado $empleado)
     {
         $user = $empleado->user;
+        $request->validate([
+            'cargo' => 'required',
+            'area' => 'required',
+            'residencia' =>'required',
+            'avatar' => 'required',
+        ]);
         $empleado->update($request->all());
-        return view('empleados.show',['empleado'=>$empleado,'users'=>$user]);
+        return view('empleados.index',['empleado'=>$empleado,'users'=>$user]);
     }
 
     /**

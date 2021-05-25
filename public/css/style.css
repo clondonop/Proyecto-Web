@@ -1,3 +1,24 @@
+.capital{
+  text-transform: capitalize;
+}
+.menu{
+  margin-top:10%;
+}
+.cat{
+  background-color: #CC0000 !important;
+
+  border-bottom: 1px solid #CC0000 !important;
+
+  color: #ffffff !important;
+}
+.catb{
+  background-color: #BDC5C7 !important;
+  border:1px solid #CC0000 ;
+}
+.vh{
+  border:1px solid #CC0000 ;
+}
+
 .boton{
   background-color: #ff5c5c;
   
@@ -24,6 +45,7 @@
   background-color: transparent;
   border: transparent ;
   float:right;
+  color:#fff;
 }
 /* GLOBAL STYLES
 -------------------------------------------------- */

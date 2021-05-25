@@ -1,12 +1,32 @@
 @extends('layouts.app')
 @section('content')
+<div class="container">
+    <h1>Listado de Clientes</h1>
+    <table class="table table-striped  table-borderless table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Telefono</th>
 
-    @foreach ($clientes as $cliente)
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($clientes as $cliente)
+            <tr>
+                <th scope="row">{{$cliente->id}}</a></th>
+                <td>{{$cliente->nombre}}</td>
+                <td>{{$cliente->apellido}}</td>
+                <td>{{$cliente->correo}}</td>
+                <td>{{$cliente->telefono}}</td>
 
-            <h1>Nombre: {{$cliente->nombre}}</h1>
-            <h2>Apellido {{$cliente->apellido}}</h2>
-            <h2>Telefono  {{$cliente->telefono}}</h2>
-            <h2>Correo {{$cliente->correo}}</h2>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 
-        @endforeach
+    <a href="{{ route('home')}}" class="rojo d-flex justify-content-end m-2">Regresar</a>
+</div>
 @endsection

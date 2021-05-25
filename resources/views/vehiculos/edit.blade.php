@@ -54,8 +54,8 @@
                 <select id="disponible" class="form-control @error('disponible') is-invalid @enderror"
                     name="disponible">
                     <option selected value="">Seleccione</option>
-                    <option value="true">Disponible</option>
-                    <option value="false">Vendido</option>
+                    <option value='1'>Disponible</option>
+                    <option value='0'>Vendido</option>
                 </select>
                 @error('disponible')
                 <span class="invalid-feedback" role="alert">
@@ -84,8 +84,8 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="precio">Precio</label>
-                <input value="{{$vehiculo->precio}}" type="number" class="form-control @error('idCategoria') is-invalid @enderror capital" id="precio"
-                    name="precio">
+                <input value="{{$vehiculo->precio}}" type="number"
+                    class="form-control @error('idCategoria') is-invalid @enderror capital" id="precio" name="precio">
                 @error('precio')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -94,7 +94,9 @@
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger boton">Actualizar</button>
+            <a href="{{route('vehiculos.show',$vehiculo->id)}}"
+                class="btn btn-danger boton rojo d-flex justify-content-end"> <button class="vshow">
+                    Actualizar</button></a>
         </div>
 
     </form>

@@ -38,7 +38,15 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $request->validate([
+            'modalidad' => 'required',
+            'fecha' => 'required',
+            'hora' =>'required',
+            'interes' => 'required',
+            'idVendedor' =>'required',
+            'idCliente' =>'required',
+        ]);
+        
         Cita::create([
             'modalidad'=> $request->modalidad,
             'fecha'=> $request->fecha,
@@ -50,6 +58,7 @@ class CitaController extends Controller
         ]);
         
         return redirect()->route('citas.index');
+     
     }
 
     /**
@@ -76,6 +85,7 @@ class CitaController extends Controller
         $users = DB::select('select id,name,lastName from users');
         $user = $cita->user;
         $cliente = $cita->cliente;
+        
         return view('citas.edit',['cita'=>$cita,'cliente'=>$cliente,'user'=>$user,'users'=>$users]);
     }
 
@@ -90,6 +100,14 @@ class CitaController extends Controller
     {
         $user = $cita->user;
         $cliente = $cita->cliente;
+        $request->validate([
+            'modalidad' => 'required',
+            'fecha' => 'required',
+            'hora' =>'required',
+            'interes' => 'required',
+            'idVendedor' =>'required',
+            'idUsuario' =>'required',
+        ]);
         $cita->update($request->all());
         return view('citas.show',['cita'=>$cita,'cliente'=>$cliente,'user'=>$user]);
     }

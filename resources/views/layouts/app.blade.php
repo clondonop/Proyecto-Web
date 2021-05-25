@@ -44,7 +44,7 @@
                             <a class="nav-link" href="{{route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('vehiculos.index') }}">Vehiculos</a>
+                            <a class="nav-link" href="{{route('vehiculos.index') }}">Vehículos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('citas.index') }}">Citas</a>
@@ -53,17 +53,20 @@
                             <a class="nav-link" href="{{route('empleados.index') }}">Empleados</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('categorias.index') }}">Categorias</a>
+                            <a class="nav-link" href="{{route('categorias.index') }}">Categorías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('clientes.index') }}">Clientes</a>
                         </li>
                     </ul>
                     @endif
                     @if(!Auth::check())
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('vehiculos.index') }}">Vehiculos Disponibles</a>
+                            <a class="nav-link" href='#vehiculos'>Vehículos Disponibles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('empleados.index') }}">Nuestros Empleados</a>
+                            <a class="nav-link" href="#empleados">Nuestros Empleados</a>
                         </li>
                     </ul>
                     @endif
@@ -118,7 +121,9 @@
     </script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script>
-    $('#timepicker').timepicker();
+    $('#timepicker').timepicker({
+        
+    });
     </script>
     <script>
     $('#datepicker').datepicker({
@@ -126,9 +131,8 @@
             const currentDate = new Date();
             return date > currentDate ? true : false;
         },
-        format: 'dd-mm-yyyy'
-
-
+        format: 'yyyy-mm-dd',
+       
     });
     </script>
 </body>

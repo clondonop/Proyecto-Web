@@ -1,13 +1,25 @@
 @extends('layouts.app')
+<style>
+body {
 
+    background-image: url("images/fondo.jpg") !important;
+
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    background-position: center center;
+
+}
+</style>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <div class="card-header cat ">{{ __('Reset Password') }}</div>
 
-                <div class="card-body">
+                <div class="card-body catb">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
