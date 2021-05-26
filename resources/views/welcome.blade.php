@@ -176,7 +176,7 @@ background-color:#000;
     <h1 id="vehiculos" class="Titulos m-3">Vehículos Disponibles</h1>
     <div class="row m-5 d-flex justify-content-center">
         @foreach($vehiculos as $vehiculo)
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 col-xs-12 col-12">
             <div class="card mb-3 vh">
                 <div class="row g-0">
                     <div class="col-md-4">
