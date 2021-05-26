@@ -63,10 +63,16 @@
                     @if(!Auth::check())
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href='#sobreNosotros'>Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href='#vehiculos'>Vehículos Disponibles</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#empleados">Nuestros Empleados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#empleados">Marcas Asociadas</a>
                         </li>
                     </ul>
                     @endif
@@ -120,9 +126,10 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
     $('#timepicker').timepicker({
-        
+
     });
     </script>
     <script>
@@ -132,7 +139,7 @@
             return date > currentDate ? true : false;
         },
         format: 'yyyy-mm-dd',
-       
+
     });
     </script>
 </body>
