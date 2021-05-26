@@ -48,7 +48,7 @@
                 <div class="custom-file">
                     <input type="file" class="custom-file-input form-control @error('avatar') is-invalid @enderror"
                         name="avatar" id="avatar" lang="es">
-                    <label class="custom-file-label" for="fto"></label>
+                    <label class="custom-file-label" for="avatar"></label>
                 </div>
                 @error("avatar")
                 <span class="invalid-feedback" role="alert">

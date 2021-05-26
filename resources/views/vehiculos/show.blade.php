@@ -12,7 +12,7 @@
                     alt="Editar"></a>
             <div class="my-1 py-1">
                 <h2 class="display-5">Placa: {{$vehiculo->placa}}</h2>
-                <p class="capital">{{$vehiculo->marca}} {{$vehiculo->color}} {{$vehiculo->modelo}} </p>
+                <p class="capital txt">{{$vehiculo->marca}} {{$vehiculo->color}} {{$vehiculo->modelo}} </p>
                 <div class="row">
                     @if($vehiculo->disponible)
                     <div class="col-md-6">Estado:Disponible</div>
